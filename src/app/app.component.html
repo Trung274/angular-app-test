@@ -1,10 +1,12 @@
-<main>
-  <a [routerLink]="['/']">
-    <header class="brand-name">
-      <img class="brand-logo" src="/public/assets/logo.svg" alt="logo" aria-hidden="true" />
-    </header>
-  </a>
-  <section class="content">
-    <router-outlet></router-outlet>
-  </section>
-</main>
+<div class="flex">
+  <app-header></app-header>
+  <main class="flex-1 transition-all duration-300" [ngClass]="{'ml-16': !sidebarExpanded, 'ml-64': sidebarExpanded}">
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <!-- Footer -->
+</footer> 

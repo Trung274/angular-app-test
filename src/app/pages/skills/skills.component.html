@@ -1,0 +1,16 @@
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-themeAccent mb-6">Skills</h1>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      @for (skill of skillsList; track skill.name) {
+        <div class="bg-themePrimary shadow-lg rounded-lg overflow-hidden">
+          <div class="p-6">
+            <h2 class="text-xl font-semibold text-themeSecondary mb-2">{{skill.name}}</h2>
+            <p class="text-gray-600">{{skill.description}}</p>
+          </div>
+        </div>
+      } @empty {
+        <p>No skills available.</p>
+      }
+    </div>
+  </div>

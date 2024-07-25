@@ -1,0 +1,18 @@
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-themeAccent mb-6">Achievements</h1>
+  
+    @for (achievement of achievementsList; track achievement.title) {
+      <div class="bg-themePrimary shadow-lg rounded-lg overflow-hidden mb-6">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold text-themeSecondary">{{achievement.title}}</h2>
+          <p class="text-gray-600">{{achievement.year}}</p>
+          <p class="mt-2">{{achievement.description}}</p>
+          @if (achievement.image) {
+            <img [src]="achievement.image" [alt]="achievement.title" class="mt-4 max-w-full h-auto">
+          }
+        </div>
+      </div>
+    } @empty {
+      <p>No achievements available.</p>
+    }
+  </div>

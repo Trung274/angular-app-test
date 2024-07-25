@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/********** Template CSS **********/
+:root {
+    --primary: #FFFFFF;
+    --secondary: #000000;
+    --accent: #b0001d;
+    --light: #F5F5F5;
+    --dark: #333333;
+}
+
+.bg-themePrimary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:\!bg-themePrimary:hover {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+}
+
+.hover\:bg-themePrimary:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.\!text-themePrimary {
+    --tw-text-opacity: 1 !important;
+    color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+}
+
+.text-themePrimary {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.hover\:\!text-themePrimary:hover {
+    --tw-text-opacity: 1 !important;
+    color: rgb(176 0 29 / var(--tw-text-opacity)) !important;
+}
+
+.hover\:text-themePrimary:hover {
+    --tw-text-opacity: 1;
+    color: rgb(176 0 29 / var(--tw-text-opacity));
+}
+
+/* Additional utility classes for the new color scheme */
+.bg-themeSecondary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.text-themeSecondary {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.bg-themeAccent {
+    --tw-bg-opacity: 1;
+    background-color: rgb(176 0 29 / var(--tw-bg-opacity));
+}
+
+.text-themeAccent {
+    --tw-text-opacity: 1;
+    color: rgb(176 0 29 / var(--tw-text-opacity));
+}

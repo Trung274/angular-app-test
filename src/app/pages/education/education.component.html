@@ -1,0 +1,16 @@
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-themeAccent mb-6">Education</h1>
+    
+    @for (education of educationList; track education.degree) {
+      <div class="bg-themePrimary shadow-lg rounded-lg overflow-hidden mb-6">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold text-themeSecondary">{{education.degree}}</h2>
+          <p class="text-themeAccent mt-2">{{education.institution}}</p>
+          <p class="text-themeSecondary mt-1">{{education.year}}</p>
+          <p class="text-themeSecondary mt-3">{{education.details}}</p>
+        </div>
+      </div>
+    } @empty {
+      <p class="text-themeSecondary">No education information available.</p>
+    }
+  </div>

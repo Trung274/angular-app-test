@@ -1,0 +1,19 @@
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-themeAccent mb-6">Work Experience</h1>
+  
+    @for (experience of experienceList; track experience.role) {
+      <div class="bg-themePrimary shadow-lg rounded-lg overflow-hidden mb-6">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold text-themeSecondary">{{experience.role}}</h2>
+          <h3 class="text-lg text-themeAccent">{{experience.company}}</h3>
+          <p class="text-gray-600">{{experience.year}}</p>
+          <p class="mt-2">{{experience.details}}</p>
+          @if (experience.logo) {
+            <img [src]="experience.logo" [alt]="experience.company + ' logo'" class="mt-4 h-12">
+          }
+        </div>
+      </div>
+    } @empty {
+      <p>No work experience information available.</p>
+    }
+  </div>

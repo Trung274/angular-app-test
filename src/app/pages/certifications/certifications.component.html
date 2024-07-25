@@ -1,0 +1,18 @@
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-themeAccent mb-6">Certifications</h1>
+  
+    @for (certification of certificationsList; track certification.name) {
+      <div class="bg-themePrimary shadow-lg rounded-lg overflow-hidden mb-6">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold text-themeSecondary">{{certification.name}}</h2>
+          <p class="text-themeAccent">{{certification.institution}}</p>
+          <p class="text-gray-600">{{certification.year}}</p>
+          @if (certification.image) {
+            <img [src]="certification.image" [alt]="certification.name + ' certificate'" class="mt-4 max-w-full h-auto">
+          }
+        </div>
+      </div>
+    } @empty {
+      <p>No certifications available.</p>
+    }
+  </div>

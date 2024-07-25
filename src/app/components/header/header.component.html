@@ -1,0 +1,108 @@
+<nav class="bg-black text-white shadow-md h-screen fixed left-0 top-0 flex flex-col transition-all duration-300"
+     [ngClass]="{'w-16': !isExpanded, 'w-64': isExpanded}">
+    <button (click)="toggleSidebar()" class="p-4 text-xl">
+        <i class="fas fa-bars"></i>
+    </button>
+    <ul class="flex-1 flex flex-col bg-black">
+
+        <!-- Home -->
+        <li class="relative group">
+            <a [routerLink]="['/']" class="p-4 hover:bg-red-600 flex items-center">
+                <i class="fas fa-home w-8"></i>
+                <span class="ml-2" [ngClass]="{'hidden': !isExpanded}">Home</span>
+            </a>
+            @if (!isExpanded) {
+            <span class="absolute left-16 top-0 bg-gray-700 text-white p-2 rounded hidden group-hover:block">Home</span>
+            }
+        </li>
+
+        <!-- About Me -->
+        <li class="relative group">
+            <a [routerLink]="['/about']" class="p-4 hover:bg-red-600 flex items-center">
+                <i class="fas fa-user w-8"></i>
+                <span class="ml-2" [ngClass]="{'hidden': !isExpanded}">About Me</span>
+            </a>
+            @if (!isExpanded) {
+                <span class="absolute left-16 top-0 bg-gray-700 text-white p-2 rounded hidden group-hover:block">About Me</span>
+              }
+        </li>
+
+        <!-- Education -->
+        <li class="relative group">
+            <a [routerLink]="['/education']" class="p-4 hover:bg-red-600 flex items-center">
+                <i class="fas fa-graduation-cap w-8"></i>
+                <span class="ml-2" [ngClass]="{'hidden': !isExpanded}">Education</span>
+            </a>
+            @if (!isExpanded) {
+                <span class="absolute left-16 top-0 bg-gray-700 text-white p-2 rounded hidden group-hover:block">Education</span>
+              }
+        </li>
+
+        <!-- Work Experience -->
+        <li class="relative group">
+            <a [routerLink]="['/experience']" class="p-4 hover:bg-red-600 flex items-center">
+                <i class="fas fa-briefcase w-8"></i>
+                <span class="ml-2" [ngClass]="{'hidden': !isExpanded}">Work Experience</span>
+            </a>
+            @if (!isExpanded) {
+                <span class="absolute left-16 top-0 bg-gray-700 text-white p-2 rounded hidden group-hover:block">Experience</span>
+              }
+        </li>
+
+        <!-- Skills -->
+        <li class="relative group">
+            <a [routerLink]="['/skills']" class="p-4 hover:bg-red-600 flex items-center">
+                <i class="fas fa-cogs w-8"></i>
+                <span class="ml-2" [ngClass]="{'hidden': !isExpanded}">Skills</span>
+            </a>
+            @if (!isExpanded) {
+                <span class="absolute left-16 top-0 bg-gray-700 text-white p-2 rounded hidden group-hover:block">Skills</span>
+              }
+        </li>
+
+        <!-- Projects -->
+        <li class="relative group">
+            <a [routerLink]="['/projects']" class="p-4 hover:bg-red-600 flex items-center">
+                <i class="fas fa-project-diagram w-8"></i>
+                <span class="ml-2" [ngClass]="{'hidden': !isExpanded}">Projects</span>
+            </a>
+            @if (!isExpanded) {
+                <span class="absolute left-16 top-0 bg-gray-700 text-white p-2 rounded hidden group-hover:block">Projects</span>
+              }
+        </li>
+
+        <!-- Certifications -->
+        <li class="relative group">
+            <a [routerLink]="['/certifications']" class="p-4 hover:bg-red-600 flex items-center">
+                <i class="fas fa-certificate w-8"></i>
+                <span class="ml-2" [ngClass]="{'hidden': !isExpanded}">Certifications</span>
+            </a>
+            @if (!isExpanded) {
+                <span class="absolute left-16 top-0 bg-gray-700 text-white p-2 rounded hidden group-hover:block">Certifications</span>
+              }
+        </li>
+
+        <!-- Achievements -->
+        <li class="relative group">
+            <a [routerLink]="['/achievements']" class="p-4 hover:bg-red-600 flex items-center">
+                <i class="fas fa-trophy w-8"></i>
+                <span class="ml-2" [ngClass]="{'hidden': !isExpanded}">Achievements</span>
+            </a>
+            @if (!isExpanded) {
+                <span class="absolute left-16 top-0 bg-gray-700 text-white p-2 rounded hidden group-hover:block">Achievements</span>
+              }
+        </li>
+
+        <!-- Contact -->
+        <li class="relative group">
+            <a [routerLink]="['/contact']" class="p-4 hover:bg-red-600 flex items-center">
+                <i class="fas fa-envelope w-8"></i>
+                <span class="ml-2" [ngClass]="{'hidden': !isExpanded}">Contact</span>
+            </a>
+            @if (!isExpanded) {
+                <span class="absolute left-16 top-0 bg-gray-700 text-white p-2 rounded hidden group-hover:block">Contact</span>
+              }
+        </li>
+
+    </ul>
+</nav>
