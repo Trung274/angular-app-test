@@ -1,6 +1,5 @@
 import {Routes} from '@angular/router';
-import {HomeComponent} from './pages/home/home.component';
-import {DetailsComponent} from './pages/details/details.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
 import { AboutComponent } from './pages/about/about.component';
 import { EducationComponent } from './pages/education/education.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
@@ -14,14 +13,8 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
 const routeConfig: Routes = [
     {
       path: '',
-      component: HomeComponent,
+      component: HomepageComponent,
       title: 'Home page',
-    },
-
-    {
-      path: 'details/:id',
-      component: DetailsComponent,
-      title: 'Home details',
     },
 
     {
@@ -29,6 +22,7 @@ const routeConfig: Routes = [
       component: AboutComponent,
       title: 'About Me',
     },
+    
     {
       path: 'education',
       component: EducationComponent,
