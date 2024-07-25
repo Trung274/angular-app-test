@@ -9,6 +9,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { CertificationsComponent } from './pages/certifications/certifications.component';
 import { AchievementsComponent } from './pages/achievements/achievements.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 
 const routeConfig: Routes = [
     {
@@ -48,6 +49,13 @@ const routeConfig: Routes = [
       component: ProjectsComponent,
       title: 'Projects',
     },
+
+    {
+      path: 'projects/:id',
+      component: ProjectDetailsComponent,
+      title: 'Project details',
+    },
+
     {
       path: 'certifications',
       component: CertificationsComponent,

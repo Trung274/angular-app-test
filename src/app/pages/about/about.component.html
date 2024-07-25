@@ -1,25 +1,26 @@
 <div class="container mx-auto px-4 py-8">
-    <div class="bg-themePrimary shadow-lg rounded-lg overflow-hidden">
-      <div class="md:flex">
-        <div class="md:flex-shrink-0">
-          <img class="h-48 w-full object-cover md:w-48" [src]="about.photo" alt="Profile photo">
+  <div class="bg-themePrimary shadow-lg rounded-lg overflow-hidden">
+    <div class="md:flex">
+      <div class="md:flex-shrink-0">
+        <img [src]="about.photo" [alt]="'Profile picture'" class="h-48 w-full object-cover md:w-48">
+      </div>
+      <div class="p-8">
+        <div class="uppercase tracking-wide text-2xl text-themeAccent font-semibold">
+          About Me
         </div>
-        <div class="p-8">
-          <div class="uppercase tracking-wide text-2xl text-themeAccent font-semibold">About Me</div>
-          <h2 class="block mt-1 text-lg leading-tight font-medium text-themeSecondary">Age: {{about.age}}</h2>
-          <p class="mt-2 text-themeSecondary">{{about.introduction}}</p>
-          <div class="mt-4">
-            <h3 class="text-themeAccent font-semibold">Interests:</h3>
-            <ul class="list-disc list-inside">
-              <!-- <li *ngFor="let interest of about.interests" class="text-themeSecondary">{{interest}}</li> -->
-              @for (interest of about.interests; track $index) {
-                <li class="text-themeSecondary">{{interest}}</li>
-              } @empty {
-                <li class="text-themeSecondary">No interests listed</li>
-              }
-            </ul>
-          </div>
+        <p class="block mt-1 text-lg leading-tight font-medium text-themeSecondary">
+          Age: {{about.age}}
+        </p>
+        <p class="mt-2">{{about.introduction}}</p>
+        <div class="mt-4">
+          <h3 class="text-themeAccent font-semibold">Interests:</h3>
+          <ul class="list-disc list-inside">
+            @for (interest of about.interests; track interest) {
+              <li>{{interest}}</li>
+            }
+          </ul>
         </div>
       </div>
     </div>
   </div>
+</div>

@@ -109,7 +109,7 @@ export const MOCK_ABOUT = {
     age: 22,
     interests: ["Movie Lover", "Software Engineering", "Traveling", "Video Games"],
     introduction: "I am a passionate software engineer with a love for creating innovative solutions and a keen interest in continuous learning. With a background in both front-end and back-end development, I enjoy tackling complex problems and collaborating with diverse teams to build user-friendly applications.",
-    photo: "/public/assets/img/avatar.jpg"
+    photo: "/assets/img/avatar.jpg"
 };
 
 export const EDUCATION = [
@@ -132,15 +132,15 @@ export const EXPERIENCE = [
         role: "Internship Software Developer",
         company: "Bac Ha Software",
         year: "2023 - Present",
-        details: "Leading a team of developers in building scalable web applications, optimizing performance, and ensuring high code quality.",
-        logo: "https://your-image-link.com/company-logo.jpg"
+        details: "Intern in a team of developers in building scalable web applications, optimizing performance, and ensuring high code quality.",
+        logo: "/assets/img/bhsoft.jpg"
     },
     {
         role: "Software Developer",
         company: "XXXtech",
         year: "2019 - 2022",
         details: "Developed and maintained various web applications, collaborated with cross-functional teams, and participated in code reviews.",
-        logo: "https://your-image-link.com/company-logo.jpg"
+        logo: "/assets/img/tech.webp"
     }
 ];
 
@@ -197,24 +197,38 @@ export const SKILLS = [
 
 export const PROJECTS = [
     {
+        id: 1,
         title: "Social Media Music App",
         description: "Built a social media application with real-time chat, post sharing, and user profile management.",
-        technologies: ["Angular", "Firebase", "TypeScript"],
+        shortDescription: "A social media app for music lovers.",
+        technologies: ["HTML", "MySQL", "Node.js"],
+        contribution: "I was responsible for designing and implementing UI for the web page, hanlding posted photo and profile management.",
+        thumbnail: "/assets/img/music.png",
         images: [
-            "https://your-image-link.com/project-image1.jpg",
-            "https://your-image-link.com/project-image2.jpg"
+            "/assets/img/music1.png",
+            "/assets/img/music2.png",
+            "/assets/img/music3.png"
         ],
-        github: "https://github.com/yourprofile/social-media-music-app"
+        github: "https://github.com/ntbtrung/music_sharing_web_app"
     },
     {
+        id: 2,
         title: "Job Applicant Platform",
         description: "Developed a full-featured job applicant platform with user authentication, job management, and application tracking.",
+        shortDescription: "A platform connecting job seekers and employers.",
         technologies: ["React", "Express.js", "Node.js", "MongoDB"],
+        contribution: "I was responsible for everything since this is for my thesis defense.",
+        thumbnail: "/assets/img/job1.png",
         images: [
-            "https://your-image-link.com/project-image1.jpg",
-            "https://your-image-link.com/project-image2.jpg"
+            "/assets/img/job1.png",
+            "/assets/img/job2.png",
+            "/assets/img/job3.png",
+            "/assets/img/job4.png",
+            "/assets/img/job5.png",
+            "/assets/img/job6.png",
+
         ],
-        github: "https://github.com/yourprofile/job-applicant-platform"
+        github: "https://github.com/Trung274/demo-backend-final-prj"
     }
 ];
 
@@ -255,3 +269,8 @@ export const CONTACT = {
     linkedIn: "https://www.linkedin.com/in/yourprofile",
     github: "https://github.com/Trung274/"
 };
+
+export const DETAILED_ANALYSIS = {
+    date: "23-4-2023",
+    link: "facebook.com/12345"
+}
