@@ -182,8 +182,3 @@ export const CONTACT = {
     linkedIn: "https://www.linkedin.com/in/yourprofile",
     github: "https://github.com/Trung274/"
 };
-
-export const DETAILED_ANALYSIS = {
-    date: "23-4-2023",
-    link: "facebook.com/12345"
-}
