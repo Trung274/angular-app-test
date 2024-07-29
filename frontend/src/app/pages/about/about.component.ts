@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MOCK_ABOUT } from '../../mock-data';
+import { AboutService } from '../../services/about.service';
 
 @Component({
   selector: 'app-about',
@@ -9,31 +9,18 @@ import { MOCK_ABOUT } from '../../mock-data';
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
-export class AboutComponent {
-  about = MOCK_ABOUT;
+export class AboutComponent implements OnInit {
+  about: any;
+
+  constructor(private aboutService: AboutService) {}
+
+  ngOnInit() {
+    this.aboutService.getAbout().subscribe({
+      next: (data) => {
+        this.about = data;
+        console.log('About data:', data);
+      },
+      error: (error) => console.error('Error fetching about info:', error)
+    });
+  }
 }
-
-// import { Component, OnInit } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { DataService } from '../../services/data.service';
-
-// @Component({
-//   selector: 'app-about',
-//   standalone: true,
-//   imports: [CommonModule],
-//   templateUrl: './about.component.html',
-//   styleUrl: './about.component.css'
-// })
-
-// export class AboutComponent implements OnInit {
-//   about: any;
-
-//   constructor(private dataService: DataService) {}
-
-//   ngOnInit() {
-//     this.dataService.getAboutInfo().subscribe(
-//       data => this.about = data,
-//       error => console.error('Error fetching about info:', error)
-//     );
-//   }
-// }

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ACHIEVEMENTS } from '../../mock-data';
+import { AchievementsService } from '../../services/achievements.service';
 
 @Component({
   selector: 'app-achievements',
@@ -9,6 +9,18 @@ import { ACHIEVEMENTS } from '../../mock-data';
   templateUrl: './achievements.component.html',
   styleUrl: './achievements.component.css'
 })
-export class AchievementsComponent {
-  achievementsList = ACHIEVEMENTS;
+export class AchievementsComponent implements OnInit {
+  achievementsList: any[] = [];
+
+  constructor(private achievementsService: AchievementsService) {}
+
+  ngOnInit() {
+    this.achievementsService.getAchievements().subscribe({
+      next: (data) => {
+        this.achievementsList = data;
+        console.log('Achievements data:', data);
+      },
+      error: (error) => console.error('Error fetching achievements:', error)
+    });
+  }
 }

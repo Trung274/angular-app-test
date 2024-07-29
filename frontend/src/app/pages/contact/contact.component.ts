@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CONTACT } from '../../mock-data';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,6 +9,18 @@ import { CONTACT } from '../../mock-data';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export class ContactComponent {
-  contact = CONTACT;
+export class ContactComponent implements OnInit {
+  contact: any;
+
+  constructor(private contactService: ContactService) {}
+
+  ngOnInit() {
+    this.contactService.getContact().subscribe({
+      next: (data) => {
+        this.contact = data;
+        console.log('Contact data:', data);
+      },
+      error: (error) => console.error('Error fetching contact info:', error)
+    });
+  }
 }
