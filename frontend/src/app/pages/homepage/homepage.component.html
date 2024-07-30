@@ -1,49 +1,53 @@
-<div class="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8">
-    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-      <div class="p-8">
-        <h1 class="text-4xl font-bold text-gray-800 mb-2">{{ personalInfo.name }}</h1>
-        <p class="text-xl text-gray-600 mb-6">{{ personalInfo.tagline }}</p>
-        
-        <div class="mb-8">
-          <h2 class="text-2xl font-semibold text-gray-700 mb-4">About Me</h2>
-          <p class="text-gray-600 italic mb-4">"{{ personalInfo.favoriteQuote }}"</p>
-          <p class="text-gray-600 mb-2">Personality Type: {{ personalInfo.personality.type }}</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span *ngFor="let trait of personalInfo.personality.traits" class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">{{ trait }}</span>
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error">{{ error }}</div>
+<div *ngIf="!loading && !error" class="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8">
+  <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+    <div class="p-8">
+      <h1 class="text-4xl font-bold text-gray-800 mb-2">{{ personalInfo.name }}</h1>
+      <p>{{ personalInfo.tagline }}</p>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">About Me</h2>
+        <p>"{{ personalInfo.favorite_quote }}"</p>
+        <p>Personality Type: {{ personalInfo.personality_type }}</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span *ngFor="let trait of personalInfo.personality_traits" class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+            {{ trait }}
+          </span>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">My Favorite Colors</h2>
+        <div class="flex gap-4">
+          <div *ngFor="let color of personalInfo.favorite_colors" class="w-16 h-16 rounded-full" [style.backgroundColor]="color"></div>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Hobbies</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div *ngFor="let hobby of personalInfo.hobbies" class="text-center">
+            <span class="text-4xl">{{ hobby.icon }}</span>
+            <p>{{ hobby.name }}</p>
           </div>
         </div>
-        
-        <div class="mb-8">
-          <h2 class="text-2xl font-semibold text-gray-700 mb-4">My Favorite Colors</h2>
-          <div class="flex gap-4">
-            <div *ngFor="let color of personalInfo.favoriteColors" class="w-16 h-16 rounded-full" [style.backgroundColor]="color"></div>
-          </div>
-        </div>
-        
-        <div class="mb-8">
-          <h2 class="text-2xl font-semibold text-gray-700 mb-4">Hobbies</h2>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div *ngFor="let hobby of personalInfo.hobbies" class="text-center">
-              <span class="text-4xl">{{ hobby.icon }}</span>
-              <p class="mt-2 text-gray-600">{{ hobby.name }}</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="mb-8">
-          <h2 class="text-2xl font-semibold text-gray-700 mb-4">Did You Know?</h2>
-          <p class="text-gray-600">{{ personalInfo.funFact }}</p>
-        </div>
-        
-        <div class="mb-8">
-          <h2 class="text-2xl font-semibold text-gray-700 mb-4">Currently Learning</h2>
-          <p class="text-gray-600">{{ personalInfo.currentlyLearning }}</p>
-        </div>
-        
-        <div>
-          <h2 class="text-2xl font-semibold text-gray-700 mb-4">Life Goal</h2>
-          <p class="text-gray-600">{{ personalInfo.lifeGoal }}</p>
-        </div>
+      </div>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Did You Know?</h2>
+        <p>{{ personalInfo.fun_fact }}</p>
+      </div>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Currently Learning</h2>
+        <p>{{ personalInfo.currently_learning }}</p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Life Goal</h2>
+        <p>{{ personalInfo.life_goal }}</p>
       </div>
     </div>
   </div>
+</div>

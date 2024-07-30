@@ -5,7 +5,7 @@
 export const environment = {
   production: false, // true for environment.prod.ts
   api: {
-    server: 'http://localhost:8000/',
+    server: `http://localhost:3360/`,
     about:'http://localhost:3360/api/about',
     education:'http://localhost:3360/api/education',
     experience:'http://localhost:3360/api/experience',

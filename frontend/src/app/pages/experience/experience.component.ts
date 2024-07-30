@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EXPERIENCE } from '../../mock-data';
+import { ExperienceService } from '../../services/experience.service';
 
 @Component({
   selector: 'app-experience',
@@ -9,6 +9,17 @@ import { EXPERIENCE } from '../../mock-data';
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css'
 })
-export class ExperienceComponent {
-  experienceList = EXPERIENCE;
+export class ExperienceComponent implements OnInit {
+  experienceList: any[] = [];
+
+  constructor(private experienceService: ExperienceService) {}
+
+  ngOnInit() {
+    this.experienceService.getExperience().subscribe({
+      next: (data) => {
+        this.experienceList = data;
+      },
+      error: (error) => console.error('Error fetching experience data:', error)
+    });
+  }
 }
